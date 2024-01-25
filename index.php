@@ -2,7 +2,7 @@
 
 echo 'hello to phpcourse.io' . '<br/>';
 
-echo $_SERVER['REQUEST_URI'] . '<br/>';
+echo $_SERVER['REQUEST_URI'] . '<br/><br/><br/><br/>';
 
 $files = array_filter(scandir('./') , fn($e) => str_contains($e , '.php'));
 $files = scandir('./');
