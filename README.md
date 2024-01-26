@@ -1,5 +1,13 @@
 "# phpcourse2" 
 
+/// video number 30 is very important 
+
+xampp config file : C:\xampp\apache\conf\httpd.conf
+xampp virtual host file config : C:\xampp\apache\conf\extra\httpd-vhosts.conf
+windows hosts file to add local domain : C:\windows\system32\drivers\etc\hosts
+
+
+
 
 // uris
 

@@ -47,7 +47,7 @@ TEXT;
 echo nl2br($text) . '<br/>';
 
 //Nowdoc
-$text = <<<TEXT
+$text = <<<'TEXT'
 line 1 $x
 line 2 $y
 line 3

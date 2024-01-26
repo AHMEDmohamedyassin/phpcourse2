@@ -37,3 +37,33 @@ echo $transaction->amount . '<br/>'
 
 $id = new \Ramsey\Uuid\UuidFactory();
 echo $id->uuid4() . '<br/>';
+
+
+
+echo PHP_EOL; // makes new line in terminal
+// echo 'ahmed'; 
+
+
+
+/**
+ * serialize : used to convert object to string with its methods and property state to be stored in database
+ * unserialize : used to get serialized object from database to make object with its same property and method state 
+ */
+$serialized = serialize($transaction);
+ echo '<br/> serialized object : ' . $serialized . '<br/>';
+
+ $unserialize_object = unserialize($serialized);
+
+
+
+ /**
+  * @exception
+  */
+
+  try{
+      $transA = new Trans('transaction' , 'tarsaction');
+  }catch(\Exception $e){
+    throw $e->getMessage() . $e->getLine();
+  }finally{
+    echo 'done';
+  }
