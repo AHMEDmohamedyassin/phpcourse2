@@ -25,3 +25,9 @@ in composer.json file to make composer autoload works then run : composer dump-a
         }
     }
 ///////////////////////////////////////////////
+
+
+
+
+// .env
+to create .env environment this repo is required : https://github.com/vlucas/phpdotenv
