@@ -31,3 +31,12 @@ in composer.json file to make composer autoload works then run : composer dump-a
 
 // .env
 to create .env environment this repo is required : https://github.com/vlucas/phpdotenv
+
+
+// doctrine     -> for database management https://www.doctrine-project.org/   video : 83 - 86 datamapper
+// illuminate database Eloquent     -> for database management active record , uses like laravel , videos 87 - 88
+
+// guzzlehttp/client   -> for fetching apis instead of CULR
+
+
+// deployment in video 95

@@ -1,11 +1,15 @@
 <?php
 require '../vendor/autoload.php';
 
+use App\Controllers\CURLController;
 use App\Controllers\DBController;
 use App\View;
+use App\BladeView;
 use App\Router\Router;
 use App\Controllers\HomeController;
 use App\Controllers\FileController;
+use App\Controllers\GeneratorController;
+use App\Controllers\MailController;
 
 session_start();
 
@@ -25,9 +29,9 @@ $dotenv->load();
 
 // phpinfo();
 
+$router = new Router();
+
 try{
-        $router = new Router();
-        
         $router
         ->get('/' , [HomeController::class , 'index'])
         ->get('/create' , [HomeController::class , 'create'])
@@ -39,6 +43,8 @@ try{
         ->get('/add' , function () {
                 echo 'add router';
         })
+        
+        // database routes
         ->get('/db' , [DBController::class , 'index'])
         ->get('/db/insert' , [DBController::class , 'insert'])
         ->get('/db/get' , [DBController::class , 'get'])
@@ -47,7 +53,17 @@ try{
         ->get('/db/droptable' , [DBController::class , 'droptable'])
         ->get('/db/rel/insert' , [DBController::class , 'relationInsert'])
         ->get('/db/rel/get' , [DBController::class , 'relationGet'])
-        ->get('/db/transaction' , [DBController::class , 'transaction']);
+        ->get('/db/transaction' , [DBController::class , 'transaction'])
+        
+        // other routes
+        ->get('/generator' , [GeneratorController::class , 'index'])
+
+        // mail
+        ->get('/mail' , [MailController::class , 'index'])
+        ->post('/mail' , [MailController::class , 'sendEmail'])
+        
+        //curl
+        ->get('/curl' , [CURLController::class , 'index']);
         
         $router->resolve($_SERVER['REQUEST_URI'] , $_SERVER['REQUEST_METHOD']);
 }catch(\Exception $e){

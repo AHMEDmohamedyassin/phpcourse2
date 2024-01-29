@@ -1,9 +1,14 @@
+<?php include_once(__DIR__.'/Header.php') ?>
+
 <h1>routes : </h1>
 <ol>
     <li><a href="/create">create</a></li>
     <li><a href="/upload">upload</a></li>
     <li><a href="/add">add</a></li>
     <li><a href="/download">download</a></li>
+    <li><a href="/generator">generator</a></li>
+    <li><a href="/mail">mail</a></li>
+    <li><a href="/curl">curl</a></li>
     <li>
         <ul>
             <h1>database</h1>
